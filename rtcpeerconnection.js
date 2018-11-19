@@ -999,6 +999,9 @@ module.exports = function(window, edgeVersion) {
           }
         }
 
+        // TCS workaround
+        remoteDtlsParameters.role = 'server';
+
         if (!usingBundle || sdpMLineIndex === 0) {
           if (iceTransport.state === 'new') {
             iceTransport.start(iceGatherer, remoteIceParameters,
